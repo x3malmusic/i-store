@@ -1,0 +1,29 @@
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: all .2s ease-in;
+  cursor: pointer;
+  text-decoration: none;
+  color: $black-bg;
+
+  &-count {
+    opacity: 0.4;
+  }
+
+  &-chosen {
+    background: $yellow-smooth;
+  }
+
+  &:hover {
+    background: $yellow-base;
+    transform: translateY(-5px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

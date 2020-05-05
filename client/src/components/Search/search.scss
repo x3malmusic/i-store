@@ -1,0 +1,42 @@
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &-input {
+    max-width: 50px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 35px;
+    font-size: $font-main;
+    color: #000;
+    outline: none;
+    transition: max-width .3s ease-in;
+
+    &-close {
+      position: absolute;
+      top: 12px;
+      right: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+      opacity: 0.5;
+      font-size: $font-main;
+    }
+
+    &:focus {
+      border: 1px solid blue;
+      max-width: 350px;
+    }
+  }
+
+    &-img {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    opacity: 1;
+    transition: opacity .3s ease-in;
+  }
+}
+

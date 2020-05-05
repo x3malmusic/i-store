@@ -1,0 +1,49 @@
+.button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: $black-bg;
+  font-weight: bold;
+  display: inline-block;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.cart-btn {
+  background: linear-gradient(90deg, #F6D365 0%, #FDA085 100%);
+  transition: opacity .2s ease-in;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    border: 1px solid #F6D365;
+  }
+}
+
+.quantity-btn {
+  box-shadow: $shadow;
+  border: 1px solid $gray-10;
+  transition: box-shadow .2s ease-in;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+}
+
+.delete-btn {
+  background: $red-base;
+  color: #fff;
+  transition: transform .2s ease-in;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}

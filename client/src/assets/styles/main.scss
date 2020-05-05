@@ -1,0 +1,52 @@
+@import "./common/variables.scss";
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.content {
+  padding: 100px 20px 0 310px;
+
+  &-wrapper {
+    display: flex;
+  }
+}
+
+//animations
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-80px);
+}
+
+.appear-enter-active,
+.appear-leave-active {
+  transition: all 0.5s;
+}
+
+.appear-enter,
+.appear-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.cart-items-enter, .cart-items-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+.cart-items-leave-active {
+  position: absolute;
+}
+

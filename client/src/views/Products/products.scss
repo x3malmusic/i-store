@@ -1,0 +1,12 @@
+.products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &-card {
+    display: flex;
+    flex-basis: 32%;
+    margin-bottom: 15px;
+  }
+}

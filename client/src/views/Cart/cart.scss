@@ -1,0 +1,33 @@
+.cart {
+  position: fixed;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  top: 80px;
+  right: 20px;
+  border: 1px solid #000;
+  background: $black-bg;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+
+  &-empty {
+    text-align: center;
+  }
+
+  &:before {
+    content: "";
+    position: fixed;
+    width: 0;
+    height: 0;
+    top: 66px;
+    right: 33px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 15px solid #3E4345;
+  }
+}
+
+.cart-btn {
+  width: 90%;
+}

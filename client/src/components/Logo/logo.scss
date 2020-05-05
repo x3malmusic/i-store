@@ -1,0 +1,22 @@
+.logo {
+    display: flex;
+    align-items: center;
+
+  &-img {
+    padding: 10px 15px;
+    background: #fff;
+    color: $yellow-base;
+    border-radius: 6px;
+    font-size: $logo;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  &-text {
+    margin: 0;
+    color: #fff;
+    font-size: $logo;
+    font-weight: bold;
+  }
+}
