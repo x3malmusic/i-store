@@ -1,7 +1,7 @@
 <template>
   <div class="categories">
     <category
-      v-for="category in categories"
+      v-for="category in getItemsCountInCategories"
       :category="category"
       :key="category.name"
       :active="activeCategory === category.name"
@@ -12,7 +12,7 @@
 
 <script>
 import Category from "../../components/Category/Category";
-import { mapState, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Categories",
@@ -21,8 +21,9 @@ export default {
   }),
   components: { Category },
   computed: {
-    ...mapState(["categories"]),
-    ...mapGetters(["getItemsCountInCategories"]),
+    ...mapGetters({
+      getItemsCountInCategories: "Product/getItemsCountInCategories",
+    }),
   },
   methods: {
     setActiveCategory(category) {

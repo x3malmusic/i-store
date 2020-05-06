@@ -1,12 +1,12 @@
 export const defCategories = [
-  { name: "All", count: 2405 },
-  { name: "Computers", count: 128 },
-  { name: "Electronics", count: 12 },
-  { name: "Women's fashion", count: 1254 },
-  { name: "Men's fashion", count: 13 },
-  { name: "Luggage", count: 161 },
-  { name: "Books", count: 68 },
-  { name: "Beauty & Care", count: 89 },
+  { name: "All" },
+  { name: "Computers" },
+  { name: "Electronics" },
+  { name: "Women's fashion" },
+  { name: "Men's fashion" },
+  { name: "Luggage" },
+  { name: "Books" },
+  { name: "Beauty & Care" },
 ];
 
 export const defProducts = [

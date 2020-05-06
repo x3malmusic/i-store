@@ -7,7 +7,7 @@
       <h4>{{ slicedProductName }}</h4>
       <h2>[{{ product.quantity }}]</h2>
     </div>
-    <app-button type="delete-btn" title="Delete" :callback="deleteItem" />
+    <app-button type="delete-btn" title="Delete" @click="deleteItem" />
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["deleteFromCart"]),
+    ...mapMutations({ deleteFromCart: "Cart/deleteFromCart" }),
     deleteItem() {
       this.deleteFromCart(this.product);
     },

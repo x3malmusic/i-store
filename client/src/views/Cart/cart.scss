@@ -14,18 +14,6 @@
   &-empty {
     text-align: center;
   }
-
-  &:before {
-    content: "";
-    position: fixed;
-    width: 0;
-    height: 0;
-    top: 66px;
-    right: 33px;
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-bottom: 15px solid #3E4345;
-  }
 }
 
 .cart-btn {

@@ -11,15 +11,15 @@
       </div>
       <div class="product-page-quantity">
         <div>
-          <app-button title="+" type="quantity-btn" :callback="addQuantity" />
+          <app-button title="+" type="quantity-btn" @click="addQuantity" />
           <div class="quantity">{{ quantity }}</div>
-          <app-button title="-" type="quantity-btn" :callback="subQuantity" />
+          <app-button title="-" type="quantity-btn" @click="subQuantity" />
         </div>
       </div>
       <app-button
         title="+ Add To Cart"
         type="cart-btn"
-        :callback="addItemToCart"
+        @click="addItemToCart"
       />
     </div>
   </div>
@@ -27,7 +27,7 @@
 
 <script>
 import AppButton from "../../components/AppButton/AppButton";
-import { mapMutations } from "vuex";
+import { mapMutations, mapState } from "vuex";
 
 export default {
   name: "ProductPage",
@@ -38,8 +38,11 @@ export default {
     product: {},
     quantity: 0,
   }),
+  computed: {
+    ...mapState({ products: (state) => state.Product.products }),
+  },
   methods: {
-    ...mapMutations(["addToCart"]),
+    ...mapMutations({ addToCart: "Cart/addToCart" }),
     addItemToCart() {
       if (this.quantity)
         this.addToCart({ ...this.product, quantity: this.quantity });
@@ -52,7 +55,7 @@ export default {
     },
   },
   mounted() {
-    this.product = this.$route.query.product;
+    this.product = this.products[this.$route.params.productId];
   },
 };
 </script>

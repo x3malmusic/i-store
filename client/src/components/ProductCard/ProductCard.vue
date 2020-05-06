@@ -3,7 +3,7 @@
     <div class="product-card-img">
       <img :src="product.image" alt="image" class="product-img" />
     </div>
-    <router-link :to="{ path, query: { product } }">
+    <router-link :to="{ name: 'productPage', params: { productId: path } }">
       <h2>{{ product.name }}</h2>
     </router-link>
     <h6>{{ product.description }}</h6>

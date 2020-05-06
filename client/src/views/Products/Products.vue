@@ -15,7 +15,7 @@ export default {
   name: "Products",
   components: { ProductCard },
   computed: {
-    ...mapGetters(["getProducts"]),
+    ...mapGetters({ getProducts: "Product/getProducts" }),
   },
 };
 </script>

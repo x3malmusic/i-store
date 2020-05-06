@@ -4,6 +4,6 @@ export default {
   },
 
   setSearchQuery(state, query) {
-    state.searchQuery = query
-  }
+    state.searchQuery = query;
+  },
 };

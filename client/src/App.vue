@@ -22,7 +22,9 @@ import { mapState } from "vuex";
 export default {
   components: { Cart, AppHeader, Categories },
   computed: {
-    ...mapState(["showCartFlag"]),
+    ...mapState({
+      showCartFlag: (state) => state.Cart.showCartFlag,
+    }),
     sidebar() {
       if (this.$route.meta.sidebar) return "Categories";
     },

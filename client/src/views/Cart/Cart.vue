@@ -2,14 +2,12 @@
   <transition>
     <div class="cart">
       <div v-if="cart.length">
-        <transition-group name="cart-items" tag="div">
-          <cart-item
-            v-for="product in cart"
-            :product="product"
-            :key="product.productId"
-          />
-          <app-button title="Buy" type="cart-btn" key="cart-button" />
-        </transition-group>
+        <cart-item
+          v-for="product in cart"
+          :product="product"
+          :key="product.productId"
+        />
+        <app-button title="Buy" type="cart-btn" key="cart-button" />
       </div>
       <h2 class="cart-empty" v-else>Cart is empty</h2>
     </div>
@@ -31,7 +29,9 @@ export default {
     AppButton,
   },
   computed: {
-    ...mapState(["cart"]),
+    ...mapState({
+      cart: (state) => state.Cart.cart,
+    }),
   },
 };
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <a href="#" @click.prevent="method" :class="`button ${type}`">
+  <a
+    @click.prevent="$emit('click', $event.target.value)"
+    :class="`button ${type}`"
+  >
     <div class="button-wrapper">
       <img :src="getImg" alt="img" v-if="img" />
       {{ title }}
@@ -12,7 +15,6 @@ export default {
   name: "AppButton",
   props: {
     type: String,
-    callback: Function,
     title: String,
     img: String,
   },
@@ -20,13 +22,6 @@ export default {
     getImg() {
       if (this.img) {
         return require(`../../assets/img/${this.img}`);
-      }
-    },
-  },
-  methods: {
-    method() {
-      if (this.callback) {
-        this.callback();
       }
     },
   },

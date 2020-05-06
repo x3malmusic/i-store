@@ -27,7 +27,7 @@ export default {
     inputFocus: false,
   }),
   methods: {
-    ...mapMutations(["setSearchQuery"]),
+    ...mapMutations({ setSearchQuery: "Product/setSearchQuery" }),
     search(e) {
       this.setSearchQuery(e.target.value);
     },

@@ -21,7 +21,7 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["changeCurrentCategory"]),
+    ...mapMutations({ changeCurrentCategory: "Product/changeCurrentCategory" }),
     changeCategory() {
       this.$emit("set-active");
       this.changeCurrentCategory(this.category.name);
