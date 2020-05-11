@@ -17,7 +17,7 @@
 import AppHeader from "./components/Header/Header";
 import Cart from "./views/Cart/Cart";
 import Categories from "./views/Categories/Categories";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   components: { Cart, AppHeader, Categories },
@@ -28,6 +28,12 @@ export default {
     sidebar() {
       if (this.$route.meta.sidebar) return "Categories";
     },
+  },
+  methods: {
+    ...mapActions({ getProducts: "Product/getProducts" }),
+  },
+  mounted() {
+    this.getProducts();
   },
 };
 </script>

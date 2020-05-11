@@ -1,15 +1,18 @@
-import { defCategories, defProducts } from "../../mock";
 import productMutation from "./mutations";
+import productActions from "./actions";
 import { searchAndFilter } from "../../../helper/search";
 import { categoryItemsCount } from "../../../helper/categoryItemsCount";
 
 export default {
   namespaced: true,
   state: {
-    categories: [...defCategories],
-    products: [...defProducts],
+    categories: [],
+    products: [],
     currentCategory: "All",
     searchQuery: "",
+  },
+  actions: {
+    ...productActions,
   },
   mutations: {
     ...productMutation,

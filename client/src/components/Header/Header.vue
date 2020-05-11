@@ -24,7 +24,7 @@
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 import AppButton from "../AppButton/AppButton";
-import { mapState, mapGetters, mapMutations } from "vuex";
+import { mapGetters, mapState, mapMutations } from "vuex";
 
 export default {
   name: "AppHeader",
@@ -36,10 +36,10 @@ export default {
     },
   },
   computed: {
+    ...mapGetters({ getCartItemsQuantity: "Cart/getCartItemsQuantity" }),
     ...mapState({
       showCartFlag: (state) => state.Cart.showCartFlag,
     }),
-    ...mapGetters({ getCartItemsQuantity: "Cart/getCartItemsQuantity" }),
   },
 };
 </script>
