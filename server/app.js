@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import { errorHandler } from "./middleware/error";
 import routes from "./routes";
 
 const app = express();
@@ -18,8 +19,6 @@ app.use(
 
 app.use("/api", routes);
 
-app.use((err, req, res, next) => {
-  // res.status(500).json({ message: err.message });
-});
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`server is running on ${port} port`));
