@@ -8,19 +8,19 @@
       </div>
     </div>
     <transition name="fade">
-      <cart v-if="showCartFlag" />
+      <cart-modal v-if="showCartFlag" />
     </transition>
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/Header/Header";
-import Cart from "./views/Cart/Cart";
+import CartModal from "./views/CartModal/CartModal";
 import Categories from "./views/Categories/Categories";
 import { mapState, mapActions } from "vuex";
 
 export default {
-  components: { Cart, AppHeader, Categories },
+  components: { CartModal, AppHeader, Categories },
   computed: {
     ...mapState({
       showCartFlag: (state) => state.Cart.showCartFlag,

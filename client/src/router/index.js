@@ -18,6 +18,12 @@ const router = new VueRouter({
       component: () => import("../views/ProductPage/ProductPage"),
       meta: { sidebar: true },
     },
+    {
+      path: "/cart",
+      name: "cartPage",
+      component: () => import("../views/CartPage/CartPage"),
+      meta: { sidebar: false },
+    },
   ],
 });
 

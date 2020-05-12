@@ -7,7 +7,12 @@
           :product="product"
           :key="product.productId"
         />
-        <app-button title="Buy" type="cart-btn" key="cart-button" />
+        <app-button
+          title="Buy"
+          type="cart-btn"
+          key="cart-button"
+          @click="buy"
+        />
       </div>
       <h2 class="cart-empty" v-else>Cart is empty</h2>
     </div>
@@ -20,7 +25,7 @@ import AppButton from "../../components/AppButton/AppButton";
 import { mapState } from "vuex";
 
 export default {
-  name: "Cart",
+  name: "CartModal",
   props: {
     product: Object,
   },
@@ -32,6 +37,11 @@ export default {
     ...mapState({
       cart: (state) => state.Cart.cart,
     }),
+  },
+  methods: {
+    buy() {
+      this.$router.push({ name: "cartPage" });
+    },
   },
 };
 </script>
