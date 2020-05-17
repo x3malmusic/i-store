@@ -33,4 +33,6 @@ export const buyNotification = asyncHandler((req, res, next) => {
   };
 
   transporter.sendMail(options);
+
+  res.status(200).send();
 });
