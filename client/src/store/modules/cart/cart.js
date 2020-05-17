@@ -1,4 +1,5 @@
 import cartMutations from "./mutations";
+import cartActions from "./actions";
 
 export default {
   namespaced: true,
@@ -8,6 +9,10 @@ export default {
 
   mutations: {
     ...cartMutations,
+  },
+
+  actions: {
+    ...cartActions,
   },
 
   getters: {

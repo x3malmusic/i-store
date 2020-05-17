@@ -15,7 +15,8 @@
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "express-promise-router": "^3.0.3"
+    "express-promise-router": "^3.0.3",
+    "nodemailer": "^6.4.6"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",

@@ -28,7 +28,7 @@
 <script>
 import AppButton from "../../components/AppButton/AppButton";
 import CartItem from "../../components/CartItem/CartItem";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "CartPage",
@@ -45,8 +45,10 @@ export default {
     },
   },
   methods: {
+    ...mapActions({ makeAnOrder: "Cart/makeAnOrder" }),
+
     buy() {
-      console.log("buy");
+      this.makeAnOrder(this.cart);
     },
   },
 };
