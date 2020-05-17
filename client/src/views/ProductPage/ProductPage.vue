@@ -1,26 +1,28 @@
 <template>
-  <div class="product-page">
-    <div class="product-page-img">
-      <img :src="product.image" alt="image" class="product-img" />
-    </div>
-    <div class="product-page-description">
-      <div>
-        <h2>{{ product.name }}</h2>
-        <h6>{{ product.description }}</h6>
-        <h3>${{ product.price }}</h3>
+  <div class="content">
+    <div class="product-page">
+      <div class="product-page-img">
+        <img :src="product.image" alt="image" class="product-img" />
       </div>
-      <div class="product-page-quantity">
+      <div class="product-page-description">
         <div>
-          <app-button title="+" type="quantity-btn" @click="addQuantity" />
-          <div class="quantity">{{ quantity }}</div>
-          <app-button title="-" type="quantity-btn" @click="subQuantity" />
+          <h2>{{ product.name }}</h2>
+          <h6>{{ product.description }}</h6>
+          <h3>${{ product.price }}</h3>
         </div>
+        <div class="product-page-quantity">
+          <div>
+            <app-button title="+" type="quantity-btn" @click="addQuantity" />
+            <div class="quantity">{{ quantity }}</div>
+            <app-button title="-" type="quantity-btn" @click="subQuantity" />
+          </div>
+        </div>
+        <app-button
+          title="+ Add To Cart"
+          type="cart-btn"
+          @click="addItemToCart"
+        />
       </div>
-      <app-button
-        title="+ Add To Cart"
-        type="cart-btn"
-        @click="addItemToCart"
-      />
     </div>
   </div>
 </template>
@@ -39,13 +41,17 @@ export default {
     quantity: 0,
   }),
   computed: {
-    ...mapState({ products: (state) => state.Product.products }),
+    ...mapState({
+      products: (state) => state.Product.products,
+      cart: (state) => state.Cart.cart,
+    }),
   },
   methods: {
     ...mapMutations({ addToCart: "Cart/addToCart" }),
     addItemToCart() {
       if (this.quantity)
         this.addToCart({ ...this.product, quantity: this.quantity });
+      this.$_add_items(this.cart);
     },
     addQuantity() {
       this.quantity += 1;
@@ -54,8 +60,10 @@ export default {
       if (this.quantity) this.quantity -= 1;
     },
   },
-  mounted() {
-    this.product = this.products[this.$route.params.productId];
+  async mounted() {
+    await this.products.map((e) => {
+      if (e.productId == this.$route.params.productId) this.product = e;
+    });
   },
 };
 </script>

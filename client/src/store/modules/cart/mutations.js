@@ -1,8 +1,4 @@
 export default {
-  showCart(state, show) {
-    state.showCartFlag = show;
-  },
-
   addToCart(state, item) {
     const found = state.cart.findIndex((e) => e.productId === item.productId);
     if (found != -1) {
@@ -13,4 +9,8 @@ export default {
   deleteFromCart(state, item) {
     state.cart = state.cart.filter((e) => e.productId != item.productId);
   },
+
+  recoverCart(state, items) {
+    state.cart = [...items]
+  }
 };

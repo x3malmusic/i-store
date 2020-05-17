@@ -13,7 +13,7 @@ const router = new VueRouter({
       meta: { sidebar: true },
     },
     {
-      path: "/:productId",
+      path: "/products/:productId",
       name: "productPage",
       component: () => import("../views/ProductPage/ProductPage"),
       meta: { sidebar: true },

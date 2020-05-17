@@ -9,7 +9,7 @@
         img="shopping_cart.svg"
         title="CART"
         type="cart-btn"
-        @click="changeCartFlag"
+        @click="goToCart"
       />
       <transition name="appear">
         <span class="cart-item-quantity" v-if="getCartItemsQuantity">{{
@@ -24,22 +24,18 @@
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 import AppButton from "../AppButton/AppButton";
-import { mapGetters, mapState, mapMutations } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "AppHeader",
   components: { Logo, Search, AppButton },
   methods: {
-    ...mapMutations({ showCart: "Cart/showCart" }),
-    changeCartFlag() {
-      this.showCart(!this.showCartFlag);
+    goToCart() {
+      this.$router.push({ name: "cartPage" });
     },
   },
   computed: {
     ...mapGetters({ getCartItemsQuantity: "Cart/getCartItemsQuantity" }),
-    ...mapState({
-      showCartFlag: (state) => state.Cart.showCartFlag,
-    }),
   },
 };
 </script>

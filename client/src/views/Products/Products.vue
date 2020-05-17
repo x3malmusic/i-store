@@ -1,8 +1,10 @@
 <template>
-  <div class="products">
-    <h2 v-if="!getProducts.length">There are no products in this category</h2>
-    <div v-else class="products-card" v-for="product in getProducts">
-      <product-card :product="product" />
+  <div class="content">
+    <div class="products">
+      <h2 v-if="!getProducts.length">There are no products in this category</h2>
+      <div v-else class="products-card" v-for="product in getProducts">
+        <product-card :product="product" />
+      </div>
     </div>
   </div>
 </template>
